@@ -1,22 +1,25 @@
-import React, { useState, ChangeEvent } from 'react';
-import "../styles/Form.scss"
+//Form.tsx
 
+import React, { useState, ChangeEvent } from 'react'
+import '../styles/Form.scss'
 
 interface FormProps {
-    title: string;
-    handleClick: (email: string, pass: string) => void;
+    title: string
+    handleClick: (email: string, pass: string) => void
 }
 
 const Form: React.FC<FormProps> = ({ title, handleClick }) => {
-    const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
+    const [email, setEmail] = useState('')
+    const [pass, setPass] = useState('')
 
     return (
         <div className='formContainer'>
             <input
                 type='email'
                 value={email}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setEmail(e.target.value)
+                }
                 placeholder='Введите Email'
             />
 
@@ -29,7 +32,7 @@ const Form: React.FC<FormProps> = ({ title, handleClick }) => {
 
             <button onClick={() => handleClick(email, pass)}>{title}</button>
         </div>
-    );
-};
+    )
+}
 
-export { Form };
+export { Form }

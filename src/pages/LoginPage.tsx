@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Login from '../components/Login'
-import "../styles/LoginPage.scss"
+import '../styles/LoginPage.scss'
 
 const LoginPage = () => {
     return (
@@ -16,4 +16,4 @@ const LoginPage = () => {
     )
 }
 
-export default LoginPage;
+export default LoginPage

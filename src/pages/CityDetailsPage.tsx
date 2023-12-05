@@ -1,37 +1,38 @@
-// src/components/CityDetailsPage.tsx
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchCities } from '../store/slices/citySlice';
-import { RootState } from '../store/store';
-import { useParams } from 'react-router-dom';
-import LogoutButton from '../components/LogoutButton';
-import AddToFavorites from '../components/AddToFavorites';
-import RemoveFromFavorites from '../components/RemoveFromFavorites';
+//CityDetailsPage.tsx
+
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import { fetchCities } from '../store/slices/citySlice'
+import { RootState } from '../store/store'
+import AddToFavorites from '../components/AddToFavorites'
+import RemoveFromFavorites from '../components/RemoveFromFavorites'
 import '../styles/CityDetailsPage.scss'
 
+
 const CityDetailsPage: React.FC = () => {
-    const dispatch = useDispatch();
-    const { id } = useParams<{ id: string }>();
+    const dispatch = useDispatch()
+    const { id } = useParams<{ id: string }>()
     const { cities, status, error } = useSelector(
         (state: RootState) => state.city
-    );
+    )
 
     useEffect(() => {
-        dispatch(fetchCities(1000000) as any);
-    }, []);
+        dispatch(fetchCities(1000000) as any)
+    }, [])
 
     if (status === 'loading') {
-        return <div>Loading...</div>;
+        return <div>Loading...</div>
     }
 
     if (status === 'failed') {
-        return <div>Error: {error}</div>;
+        return <div>Error: {error}</div>
     }
 
-    const city = cities.find((c) => c.id === Number(id));
+    const city = cities.find((c) => c.id === Number(id))
 
     if (!city) {
-        return <div>City not found</div>;
+        return <div>City not found</div>
     }
 
     return (
@@ -46,9 +47,8 @@ const CityDetailsPage: React.FC = () => {
                 <AddToFavorites city={city} />
                 <RemoveFromFavorites city={city} />
             </div>
-
         </div>
     )
-};
+}
 
-export default CityDetailsPage;
+export default CityDetailsPage

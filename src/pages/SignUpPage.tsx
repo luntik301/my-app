@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import SignUp from '../components/SignUp'
-import "../styles/SignUpPage.scss"
+import '../styles/SignUpPage.scss'
 
 const SignUpPage = () => {
     return (

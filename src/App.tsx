@@ -13,9 +13,8 @@ function App() {
       <Route path='/' element={<HomePage />} />
       <Route path='/login' element={<LoginPage />} />
       <Route path='/signUp' element={<SignUpPage />} />
-      <Route path="/city/:id" element={<CityDetailsPage />} />
-      <Route path="/favorites" element={<FavoritesPage />} />
-
+      <Route path='/city/:id' element={<CityDetailsPage />} />
+      <Route path='/favorites' element={<FavoritesPage />} />
     </Routes>
   )
 }
