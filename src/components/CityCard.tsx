@@ -1,5 +1,7 @@
 // src/components/CityCard.tsx
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addToFavorites } from '../store/slices/favoriteSlice';
 import "../styles/CityCard.scss"
 
 interface CityCardProps {
@@ -12,11 +14,18 @@ interface CityCardProps {
 }
 
 const CityCard: React.FC<CityCardProps> = ({ city }) => {
+    const dispatch = useDispatch();
+
+    const handleAddToFavorites = () => {
+        dispatch(addToFavorites(city));
+    };
+
     return (
         <div className="city-card">
             <h2>{city.name}</h2>
             <p>Country: {city.country}</p>
             <p>Population: {city.population}</p>
+            <button onClick={handleAddToFavorites}>Add to Favorites</button>
         </div>
     );
 };

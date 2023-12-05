@@ -34,6 +34,7 @@ const HomePage = () => {
                     <CityCard city={city} />
                 </Link>
             ))}
+            <Link to="/favorites">Favorites</Link>
             <LogoutButton />
         </div>
     )
