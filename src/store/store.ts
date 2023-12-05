@@ -1,6 +1,6 @@
 // src/app/store.ts
 import { configureStore } from '@reduxjs/toolkit';
-import cityReducer from '../features/citySlice';
+import cityReducer from './slices/citySlice';
 
 const store = configureStore({
     reducer: {
