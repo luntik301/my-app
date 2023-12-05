@@ -1,4 +1,4 @@
-// src/pages/CityListPage.tsx
+// src/pages/HomePage.tsx
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,17 +17,15 @@ const HomePage = () => {
 
     const { email, isAuth } = useAuth();
 
-    const handleLogout = () => {
-        localStorage.removeItem('user');
-        dispatch(removeUser());
-        return <Navigate to='/signUp' />;
-    };
-
-    //После перезагрузки страницы перестает работать кнопка выхода из аккаунта
-
     useEffect(() => {
         dispatch(fetchCities(1000000) as any);
     }, [dispatch]);
+
+    const handleLogout = () => {
+        localStorage.removeItem('user');
+        dispatch(removeUser());
+        window.location.reload();  // Перезагрузим страницу после выхода
+    };
 
     if (status === 'loading') {
         return <div>Loading...</div>;
