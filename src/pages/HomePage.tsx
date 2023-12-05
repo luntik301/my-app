@@ -8,6 +8,7 @@ import { removeUser } from '../store/slices/userSlice';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import CityCard from '../components/CityCard';
+import "../styles/HomePage.scss"
 
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -19,12 +20,12 @@ const HomePage = () => {
 
     useEffect(() => {
         dispatch(fetchCities(1000000) as any);
-    }, [dispatch]);
+    }, []);
 
     const handleLogout = () => {
         localStorage.removeItem('user');
         dispatch(removeUser());
-        window.location.reload();  // Перезагрузим страницу после выхода
+        window.location.reload();
     };
 
     if (status === 'loading') {
@@ -36,7 +37,7 @@ const HomePage = () => {
     }
 
     return isAuth ? (
-        <div>
+        <div className='home-page'>
             <h1>City Cards</h1>
             {cities.map((city) => (
                 <CityCard key={city.id} city={city} />

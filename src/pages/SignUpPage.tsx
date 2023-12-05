@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 import SignUp from '../components/SignUp'
+import "../styles/SignUpPage.scss"
 
 const SignUpPage = () => {
     return (
-        <div className='RegisterPage'>
+        <div className='sign-up-page'>
             <h1>Страница Регистрации</h1>
 
             <SignUp />

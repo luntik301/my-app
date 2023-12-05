@@ -1,4 +1,5 @@
 // src/app/store.ts
+
 import { configureStore } from '@reduxjs/toolkit';
 import cityReducer from './slices/citySlice';
 import userReducer from './slices/userSlice';

@@ -1,0 +1,19 @@
+// src/pages/HomePage.scss
+.home-page {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #45a049;
+    }
+  }
+}

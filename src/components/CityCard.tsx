@@ -1,5 +1,6 @@
 // src/components/CityCard.tsx
 import React from 'react';
+import "../styles/CityCard.scss"
 
 interface CityCardProps {
     city: {

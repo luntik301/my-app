@@ -1,4 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
+import "../styles/Form.scss"
+
 
 interface FormProps {
     title: string;
