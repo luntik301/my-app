@@ -16,7 +16,6 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
             <h2>{city.name}</h2>
             <p>Country: {city.country}</p>
             <p>Population: {city.population}</p>
-            {/* Add other city details as needed */}
         </div>
     );
 };

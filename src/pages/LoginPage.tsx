@@ -9,7 +9,7 @@ const LoginPage = () => {
             <Login />
 
             <p>
-                Или <Link to='/register'>зарегестрироваться</Link>
+                Или <Link to='/signUp'>зарегестрироваться</Link>
             </p>
         </div>
     )

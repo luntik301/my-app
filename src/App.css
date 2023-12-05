@@ -1,31 +1,32 @@
-/* src/App.css */
-.app-container {
+/* Form.css */
+.formContainer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
+input {
+  margin-bottom: 10px;
+  padding: 8px;
 }
 
-/* src/components/CityCard.css */
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* CityCard.css */
 .city-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px;
-  width: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.city-card h2 {
-  margin-bottom: 8px;
-}
-
-.city-card p {
-  margin: 0;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  max-width: 300px;
 }
