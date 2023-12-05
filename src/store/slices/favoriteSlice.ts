@@ -26,8 +26,11 @@ const favoritesSlice = createSlice({
     initialState,
     reducers: {
         addToFavorites: (state, action: PayloadAction<{ id: number, name: string, country: string, population: number }>) => {
-            state.list.push(action.payload);
-            saveFavoritesToLocalStorage(state);
+            const { id, name, country, population } = action.payload;
+            if (!state.list.some(city => city.id === id)) {
+                state.list.push({ id, name, country, population });
+                saveFavoritesToLocalStorage(state);
+            }
         },
         removeFromFavorites: (state, action: PayloadAction<number>) => {
             state.list = state.list.filter(city => city.id !== action.payload);

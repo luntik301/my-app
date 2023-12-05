@@ -28,14 +28,18 @@ const HomePage = () => {
     }
     return (
         <div className='home-page'>
-            <h1>City Cards</h1>
+            <div>
+                <h1>City Cards</h1>
+                <LogoutButton />
+            </div>
+            <Link to="/favorites">Favorites</Link>
+            <LogoutButton />
             {cities.map((city) => (
                 <Link key={city.id} to={`/city/${city.id}`}>
                     <CityCard city={city} />
                 </Link>
             ))}
-            <Link to="/favorites">Favorites</Link>
-            <LogoutButton />
+
         </div>
     )
 };

@@ -5,6 +5,8 @@ import { fetchCities } from '../store/slices/citySlice';
 import { RootState } from '../store/store';
 import { useParams } from 'react-router-dom';
 import LogoutButton from '../components/LogoutButton';
+import AddToFavorites from '../components/AddToFavorites';
+import RemoveFromFavorites from '../components/RemoveFromFavorites';
 
 const CityDetailsPage: React.FC = () => {
     const dispatch = useDispatch();
@@ -40,6 +42,8 @@ const CityDetailsPage: React.FC = () => {
             <p>Region: {city.region}</p>
             <p>Region Code: {city.regionCode}</p>
             <LogoutButton />
+            <AddToFavorites city={city} />
+            <RemoveFromFavorites city={city} />
         </div>
     )
 };
