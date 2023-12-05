@@ -7,6 +7,9 @@ interface City {
     name: string;
     country: string;
     population: number;
+    countryCode: string;
+    regionCode: string;
+    region: string;
 }
 
 interface CityState {
