@@ -8,6 +8,7 @@ import { removeUser } from '../store/slices/userSlice';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import CityCard from '../components/CityCard';
+import { Link } from 'react-router-dom';
 import "../styles/HomePage.scss"
 
 const HomePage = () => {
@@ -35,12 +36,13 @@ const HomePage = () => {
     if (status === 'failed') {
         return <div>Error: {error}</div>;
     }
-
     return isAuth ? (
         <div className='home-page'>
             <h1>City Cards</h1>
             {cities.map((city) => (
-                <CityCard key={city.id} city={city} />
+                <Link key={city.id} to={`/city/${city.id}`}>
+                    <CityCard city={city} />
+                </Link>
             ))}
             <button onClick={handleLogout}>Выйти из {email}</button>
         </div>
