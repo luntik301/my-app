@@ -4,12 +4,10 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCities } from '../store/slices/citySlice';
 import { RootState } from '../store/store';
-import { removeUser } from '../store/slices/userSlice';
-import { Navigate } from 'react-router-dom';
-import { useAuth } from '../hooks/useAuth';
 import CityCard from '../components/CityCard';
 import { Link } from 'react-router-dom';
 import "../styles/HomePage.scss"
+import LogoutButton from '../components/LogoutButton';
 
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -17,17 +15,9 @@ const HomePage = () => {
         (state: RootState) => state.city
     );
 
-    const { email, isAuth } = useAuth();
-
     useEffect(() => {
         dispatch(fetchCities(1000000) as any);
     }, []);
-
-    const handleLogout = () => {
-        localStorage.removeItem('user');
-        dispatch(removeUser());
-        window.location.reload();
-    };
 
     if (status === 'loading') {
         return <div>Loading...</div>;
@@ -36,7 +26,7 @@ const HomePage = () => {
     if (status === 'failed') {
         return <div>Error: {error}</div>;
     }
-    return isAuth ? (
+    return (
         <div className='home-page'>
             <h1>City Cards</h1>
             {cities.map((city) => (
@@ -44,11 +34,9 @@ const HomePage = () => {
                     <CityCard city={city} />
                 </Link>
             ))}
-            <button onClick={handleLogout}>Выйти из {email}</button>
+            <LogoutButton />
         </div>
-    ) : (
-        <Navigate to='/signUp' />
-    );
+    )
 };
 
 export default HomePage;
