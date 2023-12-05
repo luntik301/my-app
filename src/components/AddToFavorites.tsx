@@ -2,6 +2,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addToFavorites } from '../store/slices/favoriteSlice';
+import { useNavigate } from 'react-router-dom';
 
 interface CityCardProps {
     city: {
@@ -14,13 +15,15 @@ interface CityCardProps {
 
 const AddToFavorites: React.FC<CityCardProps> = ({ city }) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleAddToFavorites = () => {
         dispatch(addToFavorites(city));
+        navigate('/favorites')
     };
 
     return (
-        <button onClick={handleAddToFavorites}>Add to Favorites</button>
+        <button className='AddToFav' onClick={handleAddToFavorites}>Add to Favorites</button>
     );
 };
 

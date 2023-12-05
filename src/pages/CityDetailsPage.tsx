@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import LogoutButton from '../components/LogoutButton';
 import AddToFavorites from '../components/AddToFavorites';
 import RemoveFromFavorites from '../components/RemoveFromFavorites';
+import '../styles/CityDetailsPage.scss'
 
 const CityDetailsPage: React.FC = () => {
     const dispatch = useDispatch();
@@ -35,15 +36,17 @@ const CityDetailsPage: React.FC = () => {
 
     return (
         <div className='city-page'>
-            <h1>{city.name}</h1>
+            <h1>City: {city.name}</h1>
             <p>Country: {city.country}</p>
             <p>Population: {city.population}</p>
             <p>Country Code: {city.countryCode}</p>
             <p>Region: {city.region}</p>
             <p>Region Code: {city.regionCode}</p>
-            <LogoutButton />
-            <AddToFavorites city={city} />
-            <RemoveFromFavorites city={city} />
+            <div className='footer'>
+                <AddToFavorites city={city} />
+                <RemoveFromFavorites city={city} />
+            </div>
+
         </div>
     )
 };
