@@ -7,6 +7,7 @@ import { RootState } from '../store/store'
 import CityCard from '../components/CityCard'
 import '../styles/FavoritesPage.scss'
 import HomeButton from '../components/HomeButton'
+import ThemeSwitcher from '../components/ThemeSwitch'
 
 const FavoritesPage = () => {
     const favorites = useSelector((state: RootState) => state.favorites.list)
@@ -23,7 +24,10 @@ const FavoritesPage = () => {
                 </div>
             ))}
             <HomeButton />
+            <ThemeSwitcher />
+
         </div>
+
     )
 }
 

@@ -1,0 +1,42 @@
+/* ThemeSwitcher.css */
+.theme-switcher {
+  margin: 8px;
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.theme-switcher label {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.theme-switcher input {
+  display: none;
+}
+
+.theme-switcher input:checked + label {
+  transform: translateX(0px);
+}
+
+.theme-switcher.light {
+  background-color: #ccc;
+}
+
+.theme-switcher.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.theme-switcher.dark label {
+  left: 32px;
+}

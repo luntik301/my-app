@@ -8,6 +8,7 @@ import { RootState } from '../store/store'
 import CityCard from '../components/CityCard'
 import LogoutButton from '../components/LogoutButton'
 import '../styles/HomePage.scss'
+import ThemeSwitcher from '../components/ThemeSwitch'
 
 const HomePage = () => {
     const dispatch = useDispatch()
@@ -47,6 +48,7 @@ const HomePage = () => {
                     </Link>
                 ))}
             </div>
+            <ThemeSwitcher />
         </div>
     )
 }

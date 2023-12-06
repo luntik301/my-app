@@ -10,7 +10,6 @@ import RemoveFromFavorites from '../components/RemoveFromFavorites'
 import '../styles/CityDetailsPage.scss'
 import HomeButton from '../components/HomeButton'
 
-
 const CityDetailsPage: React.FC = () => {
     const dispatch = useDispatch()
     const { id } = useParams<{ id: string }>()

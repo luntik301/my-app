@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Login from '../components/Login'
 import '../styles/LoginPage.scss'
+import ThemeSwitcher from '../components/ThemeSwitch'
 
 const LoginPage = () => {
     return (
@@ -12,6 +13,8 @@ const LoginPage = () => {
             <p>
                 Или <Link to='/signUp'>зарегестрироваться</Link>
             </p>
+
+            <ThemeSwitcher />
         </div>
     )
 }
