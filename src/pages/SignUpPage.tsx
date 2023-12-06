@@ -1,3 +1,5 @@
+//SignUpPage.tsx
+
 import { Link } from 'react-router-dom'
 import SignUp from '../components/SignUp'
 import '../styles/SignUpPage.scss'
