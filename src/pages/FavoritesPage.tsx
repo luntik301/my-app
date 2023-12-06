@@ -6,14 +6,11 @@ import { useSelector } from 'react-redux'
 import { RootState } from '../store/store'
 import CityCard from '../components/CityCard'
 import '../styles/FavoritesPage.scss'
+import HomeButton from '../components/HomeButton'
 
 const FavoritesPage = () => {
     const favorites = useSelector((state: RootState) => state.favorites.list)
-    const navigate = useNavigate()
 
-    const GoHome = () => {
-        navigate('/')
-    }
     return (
         <div className='favorites-page'>
             <h1>Favorites</h1>
@@ -25,7 +22,7 @@ const FavoritesPage = () => {
                     </Link>
                 </div>
             ))}
-            <button onClick={GoHome}>Main Page</button>
+            <HomeButton />
         </div>
     )
 }

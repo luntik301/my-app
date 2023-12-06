@@ -8,6 +8,7 @@ import { RootState } from '../store/store'
 import AddToFavorites from '../components/AddToFavorites'
 import RemoveFromFavorites from '../components/RemoveFromFavorites'
 import '../styles/CityDetailsPage.scss'
+import HomeButton from '../components/HomeButton'
 
 
 const CityDetailsPage: React.FC = () => {
@@ -47,6 +48,7 @@ const CityDetailsPage: React.FC = () => {
                 <AddToFavorites city={city} />
                 <RemoveFromFavorites city={city} />
             </div>
+            <HomeButton />
         </div>
     )
 }
